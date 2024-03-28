@@ -8,7 +8,7 @@ public class SceneLoader : MonoBehaviour
     // Load your main game scene here
     public void StartGame()
     {
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("ClassScene0");
     }
 
     // Load your credits scene here
