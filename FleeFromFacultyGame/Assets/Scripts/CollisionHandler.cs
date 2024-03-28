@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class CollisionHandler : MonoBehaviour
 {
-    private static HashSet<string> collectedKeys = new HashSet<string>();
+    public static HashSet<string> collectedKeys = new HashSet<string>();
     public static char doorEntered;
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -13,6 +13,7 @@ public class CollisionHandler : MonoBehaviour
         if (collision.gameObject.CompareTag("AI"))
         {
             // Load the GameOver scene
+            ResetGame();
             SceneManager.LoadScene("GameOverScene");
         }
         else if (collision.gameObject.CompareTag("Key"))
@@ -52,5 +53,10 @@ public class CollisionHandler : MonoBehaviour
         {
             SceneManager.LoadScene("GameScene");
         } 
+    }
+
+    private void ResetGame()
+    {
+        collectedKeys = new HashSet<string>();
     }
 }

@@ -7,6 +7,15 @@ public class PlayerSpawner : MonoBehaviour
 
     void Start()
     {
+        // deactivating all collected keys in the current room upon spawning
+        foreach (string key in CollisionHandler.collectedKeys)
+        {
+            GameObject keyObject = GameObject.Find("Key" + key[key.Length - 1]); 
+            if (keyObject != null)
+            {
+                keyObject.SetActive(false);
+            }
+        }
         char doorEntered = CollisionHandler.doorEntered;
         GameObject door = GameObject.Find("Door" + doorEntered);
         if (door != null)
@@ -14,22 +23,8 @@ public class PlayerSpawner : MonoBehaviour
             // Get the GameObject's position
             spawnPosition = door.transform.position;
             float offset = 1f;
-            // offset for entrances
-            if (spawnPosition.x < 0f)
-            {
-                spawnPosition.x += offset;
-            } else if (spawnPosition.x > 0f)
-            {
-                spawnPosition.x -= offset;
-            }
-
-            if (spawnPosition.y < 0f)
-            {
-                spawnPosition.y += offset;
-            } else if (spawnPosition.y > 0f)
-            {
-                spawnPosition.y -= offset;
-            }
+        
+            spawnPosition = door.transform.position + (door.transform.right * offset);
             // Now you have the coordinates in the position variable
             Debug.Log("The position of the GameObject is: " + spawnPosition);
         }
@@ -52,4 +47,10 @@ public class PlayerSpawner : MonoBehaviour
             Debug.LogError("PlayerSpawner: Player Prefab is not assigned.");
         }
     }
+
+    private bool inRange(float value, float min, float max)
+    {
+        return value >= min && value <= max;
+    }
+
 }
