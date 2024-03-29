@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerSpawner : MonoBehaviour
 {
     public GameObject playerPrefab; // Assign this in the Inspector
-    public Vector3 spawnPosition = new Vector3(0f, 0f, 0f); // Default spawn position, set this in the Inspector
+    public Vector3 spawnPosition; // Default spawn position, set this in the Inspector
 
     void Start()
     {
