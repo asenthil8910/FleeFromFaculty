@@ -6,6 +6,8 @@ public class CollisionHandler : MonoBehaviour
 {
     public static HashSet<string> collectedKeys = new HashSet<string>();
     public static char doorEntered;
+
+    public static bool gameWon = false;
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("Collision Detected with: " + collision.gameObject.name);

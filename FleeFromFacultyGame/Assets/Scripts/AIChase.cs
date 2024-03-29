@@ -11,6 +11,8 @@ public class AIChase : MonoBehaviour
     private float timeToChangeDirection = 0;
     private Rigidbody2D rb;
 
+    
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
