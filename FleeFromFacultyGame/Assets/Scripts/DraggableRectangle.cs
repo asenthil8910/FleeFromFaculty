@@ -39,7 +39,7 @@ public class DraggableRectangle : MonoBehaviour
     private void OnMouseDrag()
     {
         if (isColliding) {
-            Debug.LogError("fuck");
+            Debug.LogError("This is colliding");
             //didCollide = true;
             return;
         };

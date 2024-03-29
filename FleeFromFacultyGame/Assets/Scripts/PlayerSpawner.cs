@@ -47,10 +47,4 @@ public class PlayerSpawner : MonoBehaviour
             Debug.LogError("PlayerSpawner: Player Prefab is not assigned.");
         }
     }
-
-    private bool inRange(float value, float min, float max)
-    {
-        return value >= min && value <= max;
-    }
-
 }
