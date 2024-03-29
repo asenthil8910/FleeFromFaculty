@@ -286,6 +286,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 583d7f48455d14603a16229bb67052d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadePanel: {fileID: 0}
+  fadeSpeed: 1
 --- !u!4 &577874746
 Transform:
   m_ObjectHideFlags: 0

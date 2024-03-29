@@ -8169,6 +8169,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameHandler
       objectReference: {fileID: 0}
+    - target: {fileID: 9170604423297368753, guid: 3b5e9b638e7c7450288e4e3371b684a5, type: 3}
+      propertyPath: fadePanel
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
